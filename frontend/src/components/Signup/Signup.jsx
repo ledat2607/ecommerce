@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { BsFacebook, BsGoogle } from "react-icons/bs";
 import styles from "../../styles/style";
 import { Link } from "react-router-dom";
 import { RxAvatar } from "react-icons/rx";
@@ -161,7 +160,7 @@ const SignUp = () => {
                   <label
                     htmlFor="file-input"
                     className=" ml-5 flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm 
-                    font-medium text-gray-700 bg-white hover:bg-gray-500"
+                    font-medium text-gray-700 bg-white hover:bg-gray-500 hover:text-white transition-all"
                   >
                     <span>Chọn hình ảnh</span>
                     <input
@@ -193,16 +192,6 @@ const SignUp = () => {
                 >
                   Đăng nhập
                 </Link>
-              </div>
-              <div
-                className={`${styles.noramlFlex} w-full flex justify-center`}
-              >
-                <span
-                  className={`${styles.noramlFlex} w-full flex justify-center`}
-                >
-                  <BsFacebook className="text-gray-500 w-6 h-6 mr-4 cursor-pointer hover:text-blue-500" />
-                  <BsGoogle className="text-gray-500 w-6 h-6 cursor-pointer hover:text-red-500" />
-                </span>
               </div>
             </form>
           </div>
