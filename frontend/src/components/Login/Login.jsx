@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { BsFacebook, BsGoogle } from "react-icons/bs";
+import styles from "../../styles/style";
+import { Link } from "react-router-dom";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -43,7 +47,7 @@ const Login = () => {
                 </label>
                 <div className="mt-1 relative">
                   <input
-                    type="password"
+                    type={visible ? "text" : "password"}
                     name="password"
                     autoComplete="current-password"
                     placeholder="Nhập mật khẩu của bạn"
@@ -67,6 +71,58 @@ const Login = () => {
                     />
                   )}
                 </div>
+              </div>
+              <div className={`${styles.noramlFlex} justify-between`}>
+                <div className={`${styles.noramlFlex}`}>
+                  <input
+                    type="checkbox"
+                    name="remember-me"
+                    id="remember-me"
+                    className="h-4 w-4 text-blue-600 focus:ring-blue-400 border-gray-400 rounded"
+                  />
+                  <label
+                    htmlFor="remember-me"
+                    className="ml-2 block text-sm text-gray-900 cursor-pointer hover:text-blue-500"
+                  >
+                    Lưu đăng nhập
+                  </label>
+                </div>
+                <div className="text-sm">
+                  <a
+                    href=".forgot-password"
+                    className="font-medium text-blue-600 hover:text-red-600"
+                  >
+                    Quên mật khẩu
+                  </a>
+                </div>
+              </div>
+              <div className="w-44 m-auto">
+                <button
+                  type="submit"
+                  className="group relative w-full h-[40px] flex items-center justify-center py-2 px-4 border border-transparent
+                font-medium rounded-md text-white bg-gray-600 hover:bg-blue-500 transition-all text-lg"
+                >
+                  Đăng nhập
+                </button>
+              </div>
+              <div className={`${styles.noramlFlex} w-full`}>
+                <h4>Bạn chưa có tài khoản ? </h4>
+                <Link
+                  to="/sign-up"
+                  className="text-red-500 pl-2 hover:text-blue-500"
+                >
+                  Đăng ký
+                </Link>
+              </div>
+              <div
+                className={`${styles.noramlFlex} w-full flex justify-center`}
+              >
+                <span
+                  className={`${styles.noramlFlex} w-full flex justify-center`}
+                >
+                  <BsFacebook className="text-gray-500 w-6 h-6 mr-4 cursor-pointer hover:text-blue-500" />
+                  <BsGoogle className="text-gray-500 w-6 h-6 cursor-pointer hover:text-red-500" />
+                </span>
               </div>
             </form>
           </div>
